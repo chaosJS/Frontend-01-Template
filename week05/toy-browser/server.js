@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('X-Foo', 'bar')
   res.writeHead(200, { 'Content-Type': 'text/plain' })
   // console.log(req.headers)
-  res.end('ok')
+  res.end('ok request reveived')
 })
 
 server.listen('8787', () => {
