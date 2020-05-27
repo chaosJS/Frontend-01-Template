@@ -82,3 +82,5 @@
 - 这里仅仅实现了三种基本选择器，实际的浏览器中要处理复合选择器
 
 ### 第六步 生成 computed 属性
+
+[css html 解析方法](https://ele-peng.github.io/)
