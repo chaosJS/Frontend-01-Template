@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reactive和dom绑定</title>
+  </head>
+  <body>
+    r:<input id="r" type="range" min="0" max="255" />
+    <br />
+    g:<input id="g" type="range" min="0" max="255" />
+    <br />
+    b:<input id="b" type="range" min="0" max="255" />
+
+    <div id="color" style="width: 100px; height: 100px;"></div>
+    <script src="./reactive-effect.js"></script>
+    <script>
+      let p = reactive({ r: 100, g: 100, b: 100 })
+
+      effect(() => {
+        document.getElementById('r').value = p.r
+      })
+      effect(() => {
+        document.getElementById('g').value = p.g
+      })
+      effect(() => {
+        document.getElementById('b').value = p.b
+      })
+
+      document.getElementById('r').addEventListener('input', (event) => {
+        p.r = event.target.value
+      })
+      document.getElementById('g').addEventListener('input', (event) => {
+        p.g = event.target.value
+      })
+      document.getElementById('b').addEventListener('input', (event) => {
+        p.b = event.target.value
+      })
+
+      effect(() => {
+        document.getElementById(
+          'color'
+        ).style.backgroundColor = `rgb(${p.r}, ${p.g}, ${p.b})`
+      })
+
+      let range = document.createRange()
+      range.setStart(document.getElementById('text').childNodes[0], 6)
+      range.setEnd(document.getElementById('text').childNodes[0], 14)
+    </script>
+  </body>
+</html>
