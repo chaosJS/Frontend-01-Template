@@ -1,0 +1,16 @@
+{
+  "name": "tool-chain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "chaosJS",
+  "license": "ISC",
+  "dependencies": {
+    "cdir": "^0.1.2",
+    "ttys": "^0.0.3"
+  }
+}
